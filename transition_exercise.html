@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Transition EX</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		.box{
+			margin: auto;
+			width: 40%;
+			margin-top: 50px;
+		}
+		.lower{
+			position: relative;
+			width: 150px;
+			height: 125px;
+			flex-wrap: wrap;
+			float: left;
+			margin: 20px;
+			background: lightgray;
+			color: white;
+
+		}
+		.lower2{
+			position: relative;
+			width: 150px;
+			height: 125px;
+			left: 190px;
+			float: left;
+			margin: 20px;
+			background: lightgray;
+			color: white;
+
+		}
+		.scaleX{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.scaleX:hover{
+			transform: scaleX(1.5);
+		}
+		.scaleY{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.scaleY:hover{
+			transform: scaleY(1.5);
+		}
+		.scale{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.scale:hover{
+			transform: scale(1.5, 1.5);
+		}
+
+		.translateX{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.translateX:hover{
+			transform: translateX(20px);
+		}
+		.translateY{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.translateY:hover{
+			transform: translateY(20px);
+		}
+		.translate{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.translate:hover{
+			transform: translate(20px, 20px);
+		}
+
+		.matrix{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.matrix:hover{
+			transform: matrix(1, -1, 0, 1, 0, 0);
+		}
+
+		.rotate{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.rotate:hover{
+			transform: rotate(270deg);
+		}
+
+		.skew{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.skew:hover{
+			transform: skew(25deg, 20deg);
+		}
+		.skewX{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.skewX:hover{
+			transform: skewX(30deg);
+		}
+		.skewY{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.skewY:hover{
+			transform: skewY(30deg);
+		}
+
+		.rotateY{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.rotateY:hover{
+			transform: perspective(500px) scaleZ(2) rotateY(45deg);
+		}
+		.rotateX{
+			width: 150px;
+			height: 125px;
+			top: 0;
+			text-align: center;
+			padding: 50px 0;
+			position: absolute;
+			background: lightblue;
+			opacity: .7;
+			transition-duration: .3s;
+			transition-timing-function: ease-in-out;
+		}
+		.rotateX:hover{
+			transform: perspective(500px) scaleZ(2) rotateX(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="lower">
+			<div class="scaleX">scaleX</div>
+		</div>
+		<div class="lower">
+			<div class="scaleY">scaleY</div>
+		</div>
+		<div class="lower">
+			<div class="scale">scale</div>
+		</div>
+
+		<div class="lower">
+			<div class="translateX">translateX</div>
+		</div>
+		<div class="lower">
+			<div class="translateY">translateY</div>
+		</div>
+		<div class="lower">
+			<div class="translate">translate</div>
+		</div>
+
+		<div class="lower">
+			<div class="matrix">matrix</div>
+		</div>
+
+		<div class="lower">
+			<div class="rotate">rotate</div>
+		</div>
+
+		<div class="lower">
+			<div class="skew">skew</div>
+		</div>
+		<div class="lower">
+			<div class="skewX">skewX</div>
+		</div>
+		<div class="lower">
+			<div class="skewY">skewY</div>
+		</div>
+
+		<div class="lower">
+			<div class="rotateY">rotateY</div>
+		</div>
+		<div class="lower2">
+			<div class="rotateX">rotateX</div>
+		</div>
+	</div>
+</body>
+</html>
